@@ -1,0 +1,5 @@
+{
+  "extends": "@fh6rc/typescript-config/react-library.json",
+  "include": ["."],
+  "exclude": ["node_modules", "dist"]
+}

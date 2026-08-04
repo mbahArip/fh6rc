@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: <Service name — take from the C++ project/binary name if available, otherwise ask>
+  version: "<version — e.g., 1.0.0, fetched from NexusMods or entered manually by user>"
+  description: "Generated on <date: YYYY-MM-DD> (v<version>) from ./deps/fh6-universal-radio/src/http/http_server.cpp — reflects the C++ implementation as of this read; regenerate if the source changes."
+servers:
+  - url: <base URL if known, otherwise omit this block>
+
+tags:
+  - name: <group>
+    description: <one line describing what this group covers>
+
+paths:
+  /example/{id}:
+    get:
+      operationId: getExampleById
+      summary: <one line, in your own words, describing what the handler does>
+      tags:
+        - <group>
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: verbose
+          in: query
+          required: false
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Example"
+        "404":
+          description: Not found
+
+components:
+  schemas:
+    Example:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        note:
+          type: string
+          description: Optional field — omitted from `required`

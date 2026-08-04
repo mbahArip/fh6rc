@@ -1,0 +1,1 @@
+export { default } from '@fh6rc/ui/postcss.config';

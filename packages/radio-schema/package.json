@@ -1,0 +1,20 @@
+{
+  "name": "@fh6rc/radio-schema",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "gen-index": "bun scripts/generate-index.ts"
+  },
+  "peerDependencies": {
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@fh6rc/biome-config": "workspace:*",
+    "@fh6rc/typescript-config": "workspace:*",
+    "typescript": "catalog:"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

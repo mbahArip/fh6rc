@@ -7,13 +7,13 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check --max-diagnostics=50 .",
+    "lint": "biome check .",
     "format": "biome format --write .",
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@fh6rc/ui": "*",
-    "lucide-react": "catalog:",
+    "@tabler/icons-react": "catalog:",
     "next": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"

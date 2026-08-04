@@ -1,35 +1,13 @@
 {
   "name": "fh6rc",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "biome format --write .",
-    "check-types": "turbo run check-types",
-    "ui": "bash -c 'bunx --bun shadcn@latest add \"$1\" -c packages/ui' --"
-  },
   "devDependencies": {
-    "@biomejs/biome": "catalog:",
+    "@biomejs/biome": "^2.5.6",
+    "@fh6rc/biome-config": "workspace:*",
+    "@fh6rc/typescript-config": "workspace:*",
+    "@types/bun": "^1.3.14",
+    "@types/node": "^26.1.2",
     "turbo": "^2.10.4",
     "typescript": "catalog:"
-  },
-  "catalog": {
-    "@biomejs/biome": "^2.5.3",
-    "typescript": "5.9.2",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.2",
-    "@types/node": "^26.1.1",
-    "lucide-react": "^1.23.0",
-    "next": "16.2.0",
-    "vite": "^8.1.4",
-    "@tailwindcss/vite": "^4.3.2",
-    "tailwindcss": "^4.3.2"
-  },
-  "engines": {
-    "node": ">=18"
   },
   "devEngines": {
     "packageManager": {
@@ -37,8 +15,41 @@
       "version": "1.3.14"
     }
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "check-types": "turbo run check-types",
+    "ui:old": "bash -c 'bunx --bun shadcn@latest add \"$1\" -c packages/ui' --",
+    "ui": "bun --filter @fh6rc/ui ui",
+    "deps:sync": "bun run ./scripts/pull-deps.ts"
+  },
+  "workspaces": {
+    "packages": [
+      "./apps/*",
+      "./packages/*"
+    ],
+    "catalog": {
+      "@biomejs/biome": "2.5.6",
+      "typescript": "5.9.2",
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0",
+      "@types/react": "19.2.2",
+      "@types/react-dom": "19.2.2",
+      "@types/node": "^24",
+      "@tabler/icons-react": "^3.45.0",
+      "next": "16.2.0",
+      "vite": "^8.1.4",
+      "@tailwindcss/vite": "^4.3.2",
+      "@tailwindcss/postcss": "^4.3.2",
+      "tailwindcss": "^4.3.2",
+      "@vitejs/plugin-react": "^4.6.0",
+      "zod": "4.4.3"
+    }
+  }
 }

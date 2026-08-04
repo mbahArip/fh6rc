@@ -6,6 +6,12 @@
       "sourceType": "well-known",
       "computedHash": "823bb20133beb743ce4d5dbd612ee2242e5374b6d9782cd14d8721326d904cfa"
     },
+    "elysiajs": {
+      "source": "elysiajs/skills",
+      "sourceType": "github",
+      "skillPath": "elysia/SKILL.md",
+      "computedHash": "1f8cdb3c66e6127bd7e31fd5478bf912d976059896629cc58eec031f9bae0c74"
+    },
     "shadcn": {
       "source": "shadcn/ui",
       "sourceType": "github",
